@@ -5,8 +5,28 @@
   <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginEnd="16dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="10dp"
     android:orientation="vertical"
     >
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:gravity="center"
+      android:text="Выберите фотографию из галереи или сделайте новую"
+      />
+
+    <android.support.v7.widget.AppCompatButton
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/colorAccent"
+      android:textAllCaps="false"
+      android:text="Что мне делать"
+      />
 
   </LinearLayout>
 </layout>

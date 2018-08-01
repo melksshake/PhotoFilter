@@ -4,6 +4,8 @@ import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.natalia.melkonyan.photofilter.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
   private ActivityMainBinding binding;
 
