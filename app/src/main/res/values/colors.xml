@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <color name="turquoise">#1ABC9C</color>
-  <color name="green_sea">#16A085</color>
-  <color name="orange">#F39C12</color>
+  <color name="purple_200">#CE93D8</color>
+  <color name="purple_500">#9C27B0</color>
+  <color name="purple_700">#7B1FA2</color>
+  <color name="purple">#E436FF</color>
 </resources>

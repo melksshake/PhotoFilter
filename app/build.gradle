@@ -1,45 +1,52 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion versions.compileSdk
-    buildToolsVersion versions.buildTools
+  compileSdkVersion versions.compileSdk
+  buildToolsVersion versions.buildTools
 
-    defaultConfig {
-        applicationId "com.natalia.melkonyan.photofilter"
-        minSdkVersion versions.minSdk
-        targetSdkVersion versions.targetSdk
-        versionCode 1
-        versionName "1.0"
-        vectorDrawables.useSupportLibrary = true
+  defaultConfig {
+    applicationId "com.natalia.melkonyan.photofilter"
+    minSdkVersion versions.minSdk
+    targetSdkVersion versions.targetSdk
+    versionCode 1
+    versionName "1.0"
+    vectorDrawables.useSupportLibrary = true
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
+  dataBinding {
+    enabled = true
+  }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
-    dataBinding {
-        enabled = true
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
+  }
 }
 
 dependencies {
-    implementation "com.android.support:appcompat-v7:${versions.appcompat}"
-    implementation "com.android.support:support-v4:${versions.appcompat}"
-    implementation "com.android.support:design:${versions.appcompat}"
-    implementation "com.android.support:support-dynamic-animation:${versions.appcompat}"
-    implementation "com.android.support.constraint:constraint-layout:${versions.constraint}"
+  implementation "com.android.support:appcompat-v7:${versions.appcompat}"
+  implementation "com.android.support:support-v4:${versions.appcompat}"
+  implementation "com.android.support:design:${versions.appcompat}"
+  implementation "com.android.support:support-dynamic-animation:${versions.appcompat}"
+  implementation "com.android.support.constraint:constraint-layout:${versions.constraint}"
 
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+  implementation "io.fotoapparat.fotoapparat:library:${versions.fotoapparat}"
 
-    testImplementation 'junit:junit:4.12'
+  implementation("com.github.hotchemi:permissionsdispatcher:${versions.permissionsdispatcher}") {
+    exclude module: "support-v13"
+  }
+  annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:${versions.permissionsdispatcher}"
 
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+  testImplementation 'junit:junit:4.12'
+
+  androidTestImplementation 'com.android.support.test:runner:1.0.2'
+  androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
